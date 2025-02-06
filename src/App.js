@@ -22,7 +22,7 @@ const posts = [
       },
       {
         type: 'link',
-        content: 'Fala galera'
+        content: 'Fala galera link'
       },
     ],
     publishedAt: new Date('2025-02-03 22:35:00')
@@ -45,7 +45,7 @@ const posts = [
       },
       {
         type: 'link',
-        content: 'Fala galera'
+        content: 'Fala galera link'
       },
     ],
     publishedAt: new Date('2025-02-02 16:00:00')
@@ -63,6 +63,7 @@ function App() {
           {posts.map(post => {
             return (
               <Post 
+                key={post.id}
                 author={post.author}
                 content={post.content}
                 publishedAt={post.publishedAt}
