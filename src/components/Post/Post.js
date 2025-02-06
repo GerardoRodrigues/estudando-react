@@ -38,6 +38,8 @@ export function Post(props) {
     setComments(newCommentList);
   }
 
+  const isNewCommentEmpty = newCommentText.length === 0;
+
   return (
     <article className={styles.post}>
       <header>
@@ -70,9 +72,9 @@ export function Post(props) {
 
       <form onSubmit={createNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
-        <textarea name="comment" placeholder="Deixe um comentário" onChange={newCommentChange} value={newCommentText} />
+        <textarea required name="comment" placeholder="Deixe um comentário" onChange={newCommentChange} value={newCommentText} />
         <footer>
-          <button type="submit">Publicar</button>
+          <button disabled={isNewCommentEmpty} type="submit">Publicar</button>
         </footer>
       </form>
 
